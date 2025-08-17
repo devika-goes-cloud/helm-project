@@ -6,7 +6,8 @@ spec:
   selector:
     app: springboot-app
   ports:
-    - protocol: TCP
+    - name: http          # Important for ServiceMonitor
+      protocol: TCP
       port: 80
       targetPort: 8080
       #nodePort: 30000  # Optional: Specify a port between 30000-32767
