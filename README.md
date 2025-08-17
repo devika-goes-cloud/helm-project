@@ -222,6 +222,10 @@ so even if you havent seen any endpoint in prometheus still grafana can sho you 
 - Kubernetes / Compute Resources / Pod : -> this shows the POD health, CPU/memory usage
 - Kubernetes / Cluster / Nodes → node & pod status
 - Kubernetes / Workloads / Deployment → replica status
+
+
+
+so in prometheus , k8s components exporters expose metrics at an HTTP endpoint, usually "/metrics".
 ```
 
 ---
