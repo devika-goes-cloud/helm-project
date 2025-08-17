@@ -163,6 +163,10 @@ method 2: - by adding Prometheus annotations to the Service.
 ```
 
 
+if you following method 2 which is good for production then Yes, adding the right application.properties in your Spring Boot app is mandatory.
+
+
+
 and below is the order of execution:-
 
 ```yaml
