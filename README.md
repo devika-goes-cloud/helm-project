@@ -104,6 +104,9 @@ kubectl edit svc monitoring-kube-prometheus-prometheus -n monitoring
 
 # Access Grafana UI in the browser
 
+
+URL of loadbalancer = <LB_URL:80/300>  # make sure what port is allocated 
+
 Default credentials:
 
 user: admin
@@ -111,6 +114,7 @@ user: admin
 pass: prom-operator
 
 
+URL of loadbalancer = <LB_URL:9090>  # make sure what port is allocated for prometheus
 # > Edit grafana Service: - 
 ```bash
 kubectl edit svc monitoring-grafana -n monitoring
