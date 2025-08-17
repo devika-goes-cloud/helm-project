@@ -97,7 +97,7 @@ spec:
 
 # > Edit Prometheus Service: -
 ```bash
-kubectl edit svc monitoring-kube-prometheus-sta-prometheus -n monitoring
+kubectl edit svc monitoring-kube-prometheus-prometheus -n monitoring
 
 ```
 
