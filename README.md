@@ -165,6 +165,15 @@ method 2: - by adding Prometheus annotations to the Service.
 
 if you following method 2 which is good for production then Yes, adding the right application.properties in your Spring Boot app is mandatory.
 
+Example a developer would add:
+```yaml
+
+# Once these are in the app and the Docker image is built, DevOps can use Deployment + Service + ServiceMonitor to scrape metrics.
+
+management.endpoints.web.exposure.include=prometheus
+management.endpoint.prometheus.enabled=true
+management.server.port=8080
+```
 
 
 and below is the order of execution:-
@@ -181,7 +190,41 @@ kubectl apply -f servicemonitor.yaml (or add annotations to Service)
 ```
 
 
+```yaml
 
+even if your Spring Boot app isn’t exposing metrics yet, there’s still a lot you can monitor in Kubernetes. Prometheus + kube-prometheus-stack gives you default monitoring for the cluster itself.
+
+1️⃣ Node metrics  -> you can monitor each worker node like ec2
+- CPU, memory, disk, network usage for each node.
+- Metrics come from node-exporter, which is installed by kube-prometheus-stack.
+- Example targets: node-exporter in Prometheus UI.
+
+
+also
+
+2️⃣ Kubernetes control plane
+- API server, scheduler, controller-manager.
+- Prometheus scrapes metrics like request rates, latencies, etc.
+- Targets: apiserver, kube-scheduler, kube-controller-manager.
+
+```
+
+```yaml
+# Grafana dashboards (pre-built):-
+
+so even if you havent seen any endpoint in prometheus still grafana can sho you pod metrics 
+
+- POD dashboard: Kubernetes / Networking / Pod
+
+- NODES (Worker nodes) : Node Exporter / Nodes
+
+
+- Kubernetes / Compute Resources / Pod : -> this shows the POD health, CPU/memory usage
+- Kubernetes / Cluster / Nodes → node & pod status
+- Kubernetes / Workloads / Deployment → replica status
+```
+
+---
 
 # STEPS to create Cluster:
 ```bash
