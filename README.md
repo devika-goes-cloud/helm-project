@@ -171,3 +171,11 @@ kubectl apply -f service.yaml
 kubectl apply -f servicemonitor.yaml (or add annotations to Service)
 
 ```
+
+
+
+
+# STEPS to create Cluster:
+```bash
+eksctl create cluster --name mycluster --region ap-south-1 --nodegroup-name mynodegrp --version 1.30 --node-type t3.medium --nodes 2 --managed
+```
