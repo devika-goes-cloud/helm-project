@@ -234,3 +234,14 @@ so in prometheus , k8s components exporters expose metrics at an HTTP endpoint, 
 ```bash
 eksctl create cluster --name mycluster --region ap-south-1 --nodegroup-name mynodegrp --version 1.30 --node-type t3.medium --nodes 2 --managed
 ```
+
+
+
+<img width="1918" height="986" alt="pod health 2" src="https://github.com/user-attachments/assets/08108153-673a-4b64-adf2-a255612353e1" />
+
+<img width="1912" height="982" alt="node-health" src="https://github.com/user-attachments/assets/e8fe3727-70af-4c91-ab98-eea7ee81916d" />
+
+![pod_health](https://github.com/user-attachments/assets/7ecaea98-fb92-4ff3-9c32-deac43864125)
+
+
+
