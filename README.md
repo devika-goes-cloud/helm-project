@@ -1,4 +1,8 @@
-# helm-project
+
+
+## Helm is just a package manager.
+
+### It helps you install apps into Kubernetes (like Prometheus & Grafana).
 
 
 
