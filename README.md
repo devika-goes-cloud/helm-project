@@ -128,3 +128,31 @@ kubectl edit svc monitoring-grafana -n monitoring
 ✅ Node Exporter & Kube-State-Metrics installed automatically
 
 ```
+
+
+now you are ready to monitor your K8S application but before that ensure your service object has annotations in its service.yaml ?
+
+if not then first add that then only prometheus will scrape you app metrics
+
+
+define something like this: -
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-app-service
+  labels:
+    app: springboot-app
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8080"
+    prometheus.io/path: "/actuator/prometheus"
+```
+
+
+# we have two ways to define :
+
+method 1:- create ServiceMonitor (recommended for kube-prometheus-stack) or 
+method 2: - by adding Prometheus annotations to the Service.
+( but it also requires, You need to enable this in application.properties:
