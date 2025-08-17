@@ -4,6 +4,14 @@
 
 ### It helps you install apps into Kubernetes (like Prometheus & Grafana).
 
+```yaml
+so before that follow this workflow: -
+Create cluster →
+
+Configure kubectl →
+
+Use Helm to install Prometheus/Grafana  ( This requires a live cluster and kubeconfig.) hence Using Helm (install/upgrade/uninstall)
+```
 
 
 # Install Helm
