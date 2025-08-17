@@ -152,7 +152,22 @@ metadata:
 
 
 # we have two ways to define :
-
+```yaml
 method 1:- create ServiceMonitor (recommended for kube-prometheus-stack) or 
 method 2: - by adding Prometheus annotations to the Service.
-( but it also requires, You need to enable this in application.properties:
+( but it also requires, You need to enable this in application.properties , means Expose Prometheus Endpoint for lets say springboot app
+```
+
+
+and below is the order of execution:-
+
+```yaml
+🔑 Summary of Order
+
+kubectl apply -f deployment.yaml
+
+kubectl apply -f service.yaml
+
+kubectl apply -f servicemonitor.yaml (or add annotations to Service)
+
+```
